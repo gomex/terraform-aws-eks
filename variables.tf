@@ -117,7 +117,7 @@ variable "project" {
 }
 
 variable "node_ami_type" {
-  description = "AMI ID for worker nodes"
+  description = "AMI type for worker nodes"
   type        = string
-  default     = "ami-1234567890"
+  default     = "CUSTOM"
 }
