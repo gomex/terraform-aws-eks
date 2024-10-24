@@ -7,7 +7,7 @@ data "aws_ami" "this" {
     values = ["amazon-eks-node-1.27-v*"]
   }
 
-  owners = var.owners
+  owners = "602401143452"
 }
 
 locals {
