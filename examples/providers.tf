@@ -10,13 +10,5 @@ terraform {
 }
 
 provider "aws" {
-  region = var.region
-  default_tags {
-    tags = {
-      Environment   = var.tag_environment
-      Component     = var.tag_component
-      ComponentRole = var.tag_component_role
-      Owner         = var.tag_owner
-    }
-  }
+  region = "us-east-1"
 }
