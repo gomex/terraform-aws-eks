@@ -1,10 +1,10 @@
-# linuxtips-eks Terraform Module
+# Módulo Terraform linuxtips-eks
 
-## Description
+## Descrição
 
-This module creates a fully functional Amazon EKS cluster with associated resources.
+Este módulo cria um cluster Amazon EKS totalmente funcional com os recursos associados.
 
-## Usage
+## Uso
 
 ```hcl
 module "linuxtips_eks" {
@@ -28,47 +28,47 @@ module "linuxtips_eks" {
 }
 ```
 
-## Inputs
+## Entradas
 
-- `name`: Name of the EKS cluster.
-- `region`: AWS region.
-- `vpc_cidr_block`: CIDR block for the VPC.
-- `public_subnet_cidrs`: List of CIDR blocks for public subnets.
-- `private_subnet_cidrs`: List of CIDR blocks for private subnets.
-- `availability_zones`: List of availability zones for the subnets.
-- `cluster_name`: Name of the EKS cluster.
-- `node_instance_types`: List of instance types for the worker nodes.
-- `node_group_desired_size`: Desired size of the node group.
-- `node_group_max_size`: Maximum size of the node group.
-- `node_group_min_size`: Minimum size of the node group.
-- `tags`: Tags to apply to the resources.
+- `name`: Nome do cluster EKS.
+- `region`: Região AWS.
+- `vpc_cidr_block`: Bloco CIDR para a VPC.
+- `public_subnet_cidrs`: Lista de blocos CIDR para sub-redes públicas.
+- `private_subnet_cidrs`: Lista de blocos CIDR para sub-redes privadas.
+- `availability_zones`: Lista de zonas de disponibilidade para as sub-redes.
+- `cluster_name`: Nome do cluster EKS.
+- `node_instance_types`: Lista de tipos de instância para os nós de trabalho.
+- `node_group_desired_size`: Tamanho desejado do grupo de nós.
+- `node_group_max_size`: Tamanho máximo do grupo de nós.
+- `node_group_min_size`: Tamanho mínimo do grupo de nós.
+- `tags`: Tags a serem aplicadas aos recursos.
 
-## Outputs
+## Saídas
 
-- `eks_cluster_id`: ID of the EKS cluster.
-- `eks_cluster_endpoint`: Endpoint of the EKS cluster.
-- `eks_cluster_certificate_authority`: Certificate authority data for the cluster.
-- `eks_cluster_oidc_issuer_url`: OIDC issuer URL of the EKS cluster.
-- `eks_node_group_role_arn`: ARN of the node group IAM role.
-- `eks_autoscaler_role_arn`: ARN of the cluster autoscaler IAM role.
-- `eks_cluster_oidc_provider_arn`: ARN of the OIDC provider for the EKS cluster.
-- `eks_cluster_oidc_provider_id`: ID of the OIDC provider for the EKS cluster.
+- `eks_cluster_id`: ID do cluster EKS.
+- `eks_cluster_endpoint`: Endpoint do cluster EKS.
+- `eks_cluster_certificate_authority`: Dados da autoridade certificadora para o cluster.
+- `eks_cluster_oidc_issuer_url`: URL do emissor OIDC do cluster EKS.
+- `eks_node_group_role_arn`: ARN da função IAM do grupo de nós.
+- `eks_autoscaler_role_arn`: ARN da função IAM do escalador automático do cluster.
+- `eks_cluster_oidc_provider_arn`: ARN do provedor OIDC para o cluster EKS.
+- `eks_cluster_oidc_provider_id`: ID do provedor OIDC para o cluster EKS.
 
-## Notes
+## Notas
 
-- The module creates a VPC, subnets, and other necessary resources in the specified region.
-- The module creates a node group with the specified instance types and autoscaling configuration.
-- The module creates an IAM role for the node group and a cluster autoscaler role.
-- The module creates an OIDC provider for the EKS cluster.
-- The module creates an IAM policy for the EKS cluster autoscaler.
-- The module creates an IAM role for the EKS cluster autoscaler.
-- The module creates an IAM policy for the EKS cluster autoscaler.
+- O módulo cria uma VPC, sub-redes e outros recursos necessários na região especificada.
+- O módulo cria um grupo de nós com os tipos de instância especificados e configuração de escalabilidade automática.
+- O módulo cria uma função IAM para o grupo de nós e uma função para o escalador automático do cluster.
+- O módulo cria um provedor OIDC para o cluster EKS.
+- O módulo cria uma política IAM para o escalador automático do cluster EKS.
+- O módulo cria uma função IAM para o escalador automático do cluster EKS.
+- O módulo cria uma política IAM para o escalador automático do cluster EKS.
 
-## Terraform State
+## Estado do Terraform
 
-The Terraform state is stored in an S3 bucket and a DynamoDB table. The bucket and table are created in the root module.
+O estado do Terraform é armazenado em um bucket S3 e em uma tabela DynamoDB. O bucket e a tabela são criados no módulo raiz.
 
-## Terraform State Locking
+## Bloqueio de Estado do Terraform
 
-The Terraform state is locked using a DynamoDB table. The table is created in the root module.
+O estado do Terraform é bloqueado usando uma tabela DynamoDB. A tabela é criada no módulo raiz.
 

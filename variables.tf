@@ -83,7 +83,7 @@ variable "node_capacity_type" {
 variable "node_labels" {
   description = "Key-value mapping of labels for the node group"
   type        = map(string)
-  default     = {
+  default = {
     role = "general"
   }
 }
@@ -117,7 +117,7 @@ variable "project" {
 }
 
 variable "node_ami_type" {
-  description = "AMI ID for worker nodes"
+  description = "AMI type for worker nodes"
   type        = string
-  default     = "ami-XXXXXXXXXXXXXXXXX"
+  default     = "CUSTOM"
 }
